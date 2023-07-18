@@ -11,6 +11,9 @@ const {
   signinValidation,
 } = require('../utils/validationRules');
 
+// Настройка роута для краш-теста
+router.get('/crash-test', () => { setTimeout(() => { throw new Error('Сервер сейчас упадёт'); }, 0); });
+
 // Настройка роута для регистрации
 router.post('/signup', signupValidation, createUser);
 

@@ -1,4 +1,5 @@
 const http2 = require('http2');
+const mongoose = require('mongoose');
 
 const {
   findAllCards,
@@ -27,7 +28,13 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   createNewCard({ name, link, owner: req.user._id })
     .then((card) => res.status(http2Constants.HTTP_STATUS_CREATED).send(card))
-    .catch(next);
+    .catch((err) => {
+      if (err instanceof mongoose.Error.CastError) {
+        next(new BadRequestError('Некорректные данные при создании карточки'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 // Удалить карточку

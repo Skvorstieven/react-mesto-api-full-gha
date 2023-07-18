@@ -1,4 +1,5 @@
 const http2 = require('http2');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -11,6 +12,7 @@ const {
 } = require('../utils/databaseHandler');
 const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
+const ConflictError = require('../errors/ConflictError');
 const { jwtKey } = require('../config');
 
 const http2Constants = http2.constants;
@@ -51,7 +53,13 @@ module.exports.updateUser = (req, res, next) => {
     runValidators: true,
   })
     .then((user) => res.send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err instanceof mongoose.Error.CastError) {
+        next(new BadRequestError('Некорректные данные при редактировании пользователя'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 // Зарегистрировать нового пользователя
@@ -80,7 +88,15 @@ module.exports.createUser = (req, res, next) => {
         avatar: user.avatar,
         email: user.email,
       }))
-    .catch(next);
+    .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictError('Пользователь с этим email уже существует'));
+      } else if (err instanceof mongoose.Error.CastError) {
+        next(new BadRequestError('Некорректные данные при создании пользователя'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 // Авторизация пользователя
