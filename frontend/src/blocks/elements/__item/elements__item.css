@@ -1,0 +1,10 @@
+.elements__item {
+  width: 282px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 18px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  position: relative;
+}

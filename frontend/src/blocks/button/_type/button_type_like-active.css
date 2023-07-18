@@ -1,0 +1,6 @@
+.button_type_like-active {
+  background-image: url(../../../images/buttons/like_button_active.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

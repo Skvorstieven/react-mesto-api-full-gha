@@ -1,0 +1,6 @@
+.popup__info-tooltip-image_type_success {
+  background-image: url(../../../../images/InfoTooltip/Success.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

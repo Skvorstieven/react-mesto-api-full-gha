@@ -1,0 +1,29 @@
+.button_type_exit {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  display: flex;
+  background-image: url(../../../images/buttons/exit_button.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button_type_exit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 580px) {
+  .button_type_exit {
+    width: 20px;
+    height: 20px;
+    top: -37px;
+    right: 0;
+  }
+}

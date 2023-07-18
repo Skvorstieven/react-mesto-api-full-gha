@@ -1,0 +1,6 @@
+.popup_opened {
+  transform: translateX(0);
+  height: 100%;
+  opacity: 1;
+  transition: height 0s 0s, transform 0s 0s, opacity 0.5s 0s;
+}

@@ -1,0 +1,6 @@
+.popup__info-tooltip-image_type_error {
+  background-image: url(../../../../images/InfoTooltip/Error.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

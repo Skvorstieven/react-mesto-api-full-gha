@@ -1,0 +1,10 @@
+.content {
+  width: 880px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 880px) {
+  .content {
+    width: 100%;
+  }
+}

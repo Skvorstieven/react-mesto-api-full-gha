@@ -1,0 +1,21 @@
+.button_type_log-out {
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: #A9A9A9;
+}
+
+@media screen and (min-width: 581px) and (max-width: 880px) {
+  .button_type_log-out {
+    margin-right: 31px;
+  }
+}
+
+
+
+@media screen and (max-width: 580px) {
+  .button_type_log-out {
+    margin-bottom: 40px;
+  }
+}

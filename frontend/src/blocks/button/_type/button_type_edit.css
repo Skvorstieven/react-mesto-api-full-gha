@@ -1,0 +1,30 @@
+.button_type_edit {
+  height: 24px;
+  width: 24px;
+  border: 1px solid #FFFFFF;
+  border-radius: 0%;
+  background: none;
+  background-image: url(../../../images/buttons/edit_button.svg);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 4px;
+  padding: 0;
+  grid-area: edit-button;
+  display: flex;
+  align-self: end;
+}
+
+.button_type_edit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 580px) {
+  .button_type_edit {
+    height: 18px;
+    width: 18px;
+    -ms-flex-item-align: center;
+    align-self: center;
+    background-size: 7.5px 7.5px;
+  }
+}

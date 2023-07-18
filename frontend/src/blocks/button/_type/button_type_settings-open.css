@@ -1,0 +1,16 @@
+.button_type_settings-open {
+  width: 24px;
+  height: 21px;
+  border: none;
+  background: none;
+  margin: 0 30px 30px 0;
+  padding: 0;
+  background-image: url(../../../images/buttons/settings_button.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button_type_settings-open:hover {
+  opacity: 0.6;
+}

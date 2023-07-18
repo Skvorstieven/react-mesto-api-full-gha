@@ -1,0 +1,13 @@
+.button_place_popup-submit {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 580px) {
+    .button_place_popup-submit {
+      width: 238px;
+      height: 46px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }

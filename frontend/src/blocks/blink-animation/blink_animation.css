@@ -1,0 +1,25 @@
+.blink-animation {
+  animation: blink linear infinite 2s;
+  margin: 0;
+  padding: 0;
+}
+
+.blink-animation:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.blink-animation:last-child {
+  animation-delay: .4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}

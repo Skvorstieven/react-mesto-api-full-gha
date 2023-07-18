@@ -1,0 +1,9 @@
+.content__fallback-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+}
