@@ -1,5 +1,4 @@
 const http2 = require('http2');
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -54,7 +53,7 @@ module.exports.updateUser = (req, res, next) => {
   })
     .then((user) => res.send(user))
     .catch((err) => {
-      if (err instanceof mongoose.Error.CastError) {
+      if (err.name === 'ValidationError') {
         next(new BadRequestError('Некорректные данные при редактировании пользователя'));
       } else {
         next(err);
@@ -91,7 +90,7 @@ module.exports.createUser = (req, res, next) => {
     .catch((err) => {
       if (err.code === 11000) {
         next(new ConflictError('Пользователь с этим email уже существует'));
-      } else if (err instanceof mongoose.Error.CastError) {
+      } else if (err.name === 'ValidationError') {
         next(new BadRequestError('Некорректные данные при создании пользователя'));
       } else {
         next(err);
