@@ -7,6 +7,7 @@ const textRequiredValidation = Joi.string().required().min(2).max(30);
 const urlNotRequiredValidation = Joi.string().pattern(urlRegExp);
 const urlRequiredValidation = Joi.string().required().pattern(urlRegExp);
 const emailValidation = Joi.string().required().email();
+const passwordValidation = Joi.string().required().min(8);
 
 const signupValidation = celebrate({
   body: Joi.object().keys({
@@ -14,14 +15,14 @@ const signupValidation = celebrate({
     about: textNotRequiredValidation,
     avatar: urlNotRequiredValidation,
     email: emailValidation,
-    password: textRequiredValidation,
+    password: passwordValidation,
   }),
 });
 
 const signinValidation = celebrate({
   body: Joi.object().keys({
     email: emailValidation,
-    password: textRequiredValidation,
+    password: passwordValidation,
   }),
 });
 
