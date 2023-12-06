@@ -6,7 +6,7 @@ import placeholderUserAvatarPath from '../images/placeholder/Placeholder_user.sv
 
 // Api
 const apiOptions = {
-  baseURL: 'https://api.skvorstieven.nomoredomains.xyz',
+  baseURL: 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
   },
